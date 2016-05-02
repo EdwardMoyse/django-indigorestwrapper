@@ -30,11 +30,15 @@ If you don't know Django at all, you might want to follow the Django tutorial fi
 https://docs.djangoproject.com/en/1.9/intro/
 
 You should make sure you have an up-to-date version of pip:
+
 .. code:: bash
+
   [sudo] pip install -U pip
 
 Install virtualenv and virtualenvwrapper (if you haven't already):
+
 .. code:: bash
+
   [sudo] pip install virtualenv
   [sudo] pip install virtualenvwrapper
 
@@ -61,7 +65,9 @@ and to .bash_login you could add the following:
   source $PIP_PATH/bin/virtualenvwrapper.sh
 
 The we need to set up the virtualenv:
+
 .. code:: bash
+
   mkvirtualenv indigorestserver
   workon indigorestserver
 
@@ -69,22 +75,30 @@ Installing Django and django-indigorestwrapper
 ----------------------------------------------
 
 First make a work directory:
+
 .. code:: bash
+
   cd Documents
   mkdir IndigoRestWrapper
   cd IndigoRestWrapper
 
 To install it you need to first install some dependencies:
+
 .. code:: bash
+
   pip install django
   pip install djangorestframework
 
 To check this package out now do::
+
 .. code:: bash
+
   pip install django-indigorestwrapper
 
 Create a new project:
+
 .. code:: bash
+
   django-admin startproject mysite
 
 Edit mysite/settings.py
@@ -94,6 +108,9 @@ Add the following to INSTALLED_APPS::
     'indigorestwrapper',
 
 DATABASES should look like:
+
+.. code:: python
+
   DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -108,6 +125,8 @@ DATABASES should look like:
 (actually you're free to use whichever DB you prefer for default, but I'm keeping it sqlite3 for the benefit of this tutrorial)
 
 At the end add:
+
+.. code:: python
 
   REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
@@ -126,16 +145,22 @@ At the end add:
 You might need to update the location for indigo_db in the DATABASES section (though what is above is the default) and INDIGO_URL at the end, to tell it where to find the indigo server.
 
 Then, in the project directory, do:
+
 .. code:: bash
 
   ./manage.py migrate 
   ./manage.py makemigrations
 
 And finally, to try to grab the device data from indigo, do:
+
 .. code:: bash
+
   ./manage.py updateindigodb
 
 Now you should be able to get a server up and running using:
+
 .. code:: bash
+
   ./manage.py runserver
+
 (This is just for debugging - you should really set something up with e.g. Apache)
