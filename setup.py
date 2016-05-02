@@ -9,13 +9,13 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-indigorestwrapper',
-    version='0.4',
+    version='0.5',
     packages=find_packages(),
     include_package_data=True,
     license='MIT License',  
     description='This is a (completely unauthorized) REST wrapper for the Indigo home automation application, using Django and Django-rest-framework.',
     long_description=README,
-    url='',
+    url='https://github.com/EdwardMoyse/django-indigorestwrapper',
     author='Edward Moyse',
     author_email='edward.moyse@gmail.com',
     classifiers=[

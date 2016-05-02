@@ -37,7 +37,7 @@ def get_json_from_url(url):
 #         super(JSONResponse, self).__init__(content, **kwargs)
 
 @api_view(['GET'])
-def basic_device_list(request):
+def indigo_device_list(request):
     """
     List all devices, using the standard Indigo response.
     """    

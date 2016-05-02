@@ -21,6 +21,10 @@ Currently available APIs:
   - http://localhost:8000/device_history/1838057829/
     - The history of the device. The exact format will depend on the type, but it will typically be a ts
 
+There are also some which wrap the current Indigo API. The big problem here is simply that currently IndigoRESTWrapper can't interact with Indigo if Indigo is protected with authentication. This should be possible to fix relatively quickly, but one option is to block any access to indigo's port via your router's firewall, and then it doesn't matter so much that Indigo is unprotected.
+  - http://localhost:8000/indigo_devices/
+  - ... more to come
+
 Installation
 ============
 Before you start
@@ -160,6 +164,8 @@ And finally, to try to grab the device data from indigo, do:
 .. code:: bash
 
   ./manage.py updateindigodb
+
+(Currently this requires indigo to be unprotected - you could always disable it to run this command, then re-enable it when done - though of course any forwarding of indigo commands will not work once the server is password protected again)
 
 Now you should be able to get a server up and running using:
 
