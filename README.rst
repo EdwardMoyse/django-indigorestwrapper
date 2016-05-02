@@ -94,7 +94,7 @@ Add the following to INSTALLED_APPS::
     'indigorestwrapper',
 
 DATABASES should look like:
-.. code::python
+.. code::
   DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -109,7 +109,7 @@ DATABASES should look like:
 (actually you're free to use whichever DB you prefer for default, but I'm keeping it sqlite3 for the benefit of this tutrorial)
 
 At the end add:
-.. code:: python
+.. code:: 
 
   REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
