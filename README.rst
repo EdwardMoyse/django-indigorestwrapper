@@ -46,6 +46,7 @@ BTW on default OSX pip installs to :
 /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 
 More details are here: http://virtualenvwrapper.readthedocs.org/ but a short version might be:
+
 .. code:: bash
 
   cd $HOME
@@ -89,7 +90,7 @@ To install it you need to first install some dependencies:
   pip install django
   pip install djangorestframework
 
-To check this package out now do::
+To check this package out now do:
 
 .. code:: bash
 
@@ -101,9 +102,12 @@ Create a new project:
 
   django-admin startproject mysite
 
-Edit mysite/settings.py
+Edit mysite/settings.py.
 
-Add the following to INSTALLED_APPS::
+Add the following to INSTALLED_APPS:
+
+.. code:: python
+
     'rest_framework',
     'indigorestwrapper',
 
